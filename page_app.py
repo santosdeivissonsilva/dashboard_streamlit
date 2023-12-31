@@ -34,3 +34,7 @@ total_cidade = tabela_filtrada.groupby("City")[["Total"]].sum().reset_index()
 grafico_cidade = px.bar(total_cidade, x="City", y="Total",
                         title="Faturamento por cidade")
 col3.plotly_chart(grafico_cidade)
+
+grafico_tipo = px.pie(tabela_filtrada, values="Total", names="Payment",
+                    title="Faturamento por tipo de pagamento")
+col4.plotly_chart(grafico_tipo)
