@@ -10,11 +10,11 @@ tabela = pd.read_csv('supermarket_sales.csv', sep=';', decimal=',')
 tabela["Date"] = pd.to_datetime(tabela["Date"])
 tabela = tabela.sort_values("Date")
 
-
+# Criando coluna de meses 
 tabela["Month"] = tabela["Date"].apply(lambda x: str(x.year) + "-" + str(x.month))
 month = st.sidebar.selectbox("Mês", tabela["Month"].unique())
 
-
+# Exibindo a tabela editada
 tabela_filtrada = tabela[tabela["Month"] == month]
 tabela_filtrada
 
