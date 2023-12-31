@@ -21,5 +21,12 @@ tabela_filtrada
 col1, col2 = st.columns(2)
 col3, col4, col5 = st.columns(3)
 
-grafico_data = px.bar(tabela_filtrada, x="Date", y="Total", title="Faturamento por dia")
+grafico_data = px.bar(tabela_filtrada, x="Date", y="Total", 
+                     color="City",title="Faturamento por dia")
 col1.plotly_chart(grafico_data)
+
+grafico_produto = px.bar(tabela_filtrada, x="Date", y="Product line",
+                         color="City", title="Faturamento por tipo de produto",
+                         orientation="h")
+col2.plotly_chart(grafico_produto)
+
