@@ -30,3 +30,7 @@ grafico_produto = px.bar(tabela_filtrada, x="Date", y="Product line",
                          orientation="h")
 col2.plotly_chart(grafico_produto)
 
+total_cidade = tabela_filtrada.groupby("City")[["Total"]].sum().reset_index()
+grafico_cidade = px.bar(total_cidade, x="City", y="Total",
+                        title="Faturamento por cidade")
+col3.plotly_chart(grafico_cidade)
