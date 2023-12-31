@@ -38,3 +38,8 @@ col3.plotly_chart(grafico_cidade)
 grafico_tipo = px.pie(tabela_filtrada, values="Total", names="Payment",
                     title="Faturamento por tipo de pagamento")
 col4.plotly_chart(grafico_tipo)
+
+avaliacao_cidade = tabela_filtrada.groupby("City")[["Rating"]].mean().reset_index()
+grafico_avaliacao = px.bar(avaliacao_cidade, x="Rating", y="City", 
+                    title="Avaliação")
+col5.plotly_chart(grafico_avaliacao)
