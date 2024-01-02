@@ -1,6 +1,7 @@
 # Streamlit App - Supermarket Sales
 Projeto com a finalidade de trabalhar com dados utilizando o framework Streamlit.
 
+Veja o projeto clicando [aqui](https://supermarket-sales.streamlit.app/)!
 
 ## Requisitos
 Para rodar esse projeto você precisa ter o Python 3, Streamlit, Pandas e Plotly instalados em sua máquina.
