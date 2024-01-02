@@ -8,6 +8,8 @@ with st.container():
     st.title("Streamlit App - Supermarket Sales")
     st.write("Projeto com a finalidade de trabalhar com dados utilizando o framework Streamlit.")
 
+st.write("---")
+
 tabela = pd.read_csv('supermarket_sales.csv', sep=';', decimal=',')
 
 # Ordenando a tabela por data
