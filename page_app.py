@@ -4,6 +4,10 @@ import plotly.express as px
 
 st.set_page_config(layout="wide", page_title="Streamlit Dados")
 
+with st.container():
+    st.title("Streamlit App - Supermarket Sales")
+    st.write("Projeto com a finalidade de trabalhar com dados utilizando o framework Streamlit.")
+
 tabela = pd.read_csv('supermarket_sales.csv', sep=';', decimal=',')
 
 # Ordenando a tabela por data
@@ -14,9 +18,8 @@ tabela = tabela.sort_values("Date")
 tabela["Month"] = tabela["Date"].apply(lambda x: str(x.year) + "-" + str(x.month))
 month = st.sidebar.selectbox("Mês", tabela["Month"].unique())
 
-# Exibindo a tabela editada
 tabela_filtrada = tabela[tabela["Month"] == month]
-tabela_filtrada
+
 
 col1, col2 = st.columns(2)
 col3, col4, col5 = st.columns(3)
